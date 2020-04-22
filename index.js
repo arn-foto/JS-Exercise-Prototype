@@ -1,4 +1,9 @@
 /*
+
+npm run test:watch
+
+
+
   EXAMPLE TASK:
     - Write an Airplane constructor that initializes `name` from an argument.
     - All airplanes built with Airplane should initialize with an `isFlying` of false.
@@ -40,22 +45,29 @@ Airplane.prototype.land = function () {
 */
 
 function Person(name, age) {
-this.name = name;
-this.age = age;
-this.stomach = [];
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
 }
 
-Person.prototype.eat(someFood)
-  if(this.stomach.length === 10){
-    this.stomach.push(someFood);
-  };
-  
+Person.prototype.eat = function(food) {
+  if (this.stomach.length === 10) {
+    return;
+  }
+  this.stomach.push(food);
+};
 
+Person.prototype.poop = function() {
+  this.stomach = [];
+};
 
+Person.prototype.toString = function() {
+  return `${this.name}, ${this.age}`;
+};
 
 /*
   TASK 2
-    - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
+    - Write a Car constructor that init ializes `model` and `milesPerGallon` from arguments.
     - All instances built with Car:
         + should initialize with an `tank` at 0
         + should initialize with an `odometer` at 0
@@ -68,6 +80,8 @@ Person.prototype.eat(someFood)
 */
 
 function Car() {
+
+  
 
 }
 
