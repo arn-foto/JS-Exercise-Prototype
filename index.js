@@ -50,11 +50,11 @@ function Person(name, age) {
   this.stomach = [];
 }
 
-Person.prototype.eat = function(food) {
+Person.prototype.eat = function(someFood) {
   if (this.stomach.length === 10) {
     return;
   }
-  this.stomach.push(food);
+  this.stomach.push(someFood);
 };
 
 Person.prototype.poop = function() {
@@ -78,13 +78,18 @@ Person.prototype.toString = function() {
     - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
-
+// when it says "ability" it just means use prototype...
 function Car(model, milesPerGallon) {
   this.model = model;
   this.milesPerGallon = milesPerGallon;
   this.tank = 0;
   this.odometer = 0;
 }
+Car.prototype.fill = function(gallons){
+  return (this.tank = this.tank + gallons);
+};
+
+//Car.prototype.drive = function(distance) come back later
 
 /*
   TASK 3
@@ -101,10 +106,10 @@ function Baby() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Implicit binding refers only to the object where the function is called.
+  2. Explicit binding is used with .call, .apply, and .bind methods, to create new objects that are based on previously used objects
+  3. New binding will create a new object based on a constructor function, passing in new arguments
+  4. Window binding refers to the global object in the browser, the window
 */
 
 
